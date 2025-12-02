@@ -31,8 +31,92 @@ class menu {
             }
         }
 
-        // this function will print the unstructions to the screen
-    
+        // this function will print the instructions to the screen
+        void ViewInstructions() {
+            LCD.Clear(BLACK);
+            LCD.WriteLine("INSTRUCTIONS:");
+            LCD.WriteLine("Tap screen to jump.");
+            LCD.WriteLine("Avoid the obstacles.");
+
+             // Mateo: drawing the back button
+            LCD.DrawRectangle(10, 200, 100, 30);
+            LCD.WriteAt("Back", 35, 208);
+
+            //Mateo: this here will check if the back button is pressed
+            float x, y;
+            while (true)
+            {
+                if (LCD.Touch(&x, &y)) 
+                {
+                    if (x > 10 && x < 110 && y > 200 && y < 230)
+                    {
+                        break; 
+                    }
+                }
+            }
+        }
+
+        // This function will show the stats
+        void ViewStats() {
+            LCD.Clear(BLACK);
+            LCD.WriteLine("STATISTICS:");
+            LCD.WriteLine("High Score: 999");
+        
+        // Mateo: drawing the back button
+            LCD.DrawRectangle(10, 200, 100, 30);
+            LCD.WriteAt("Back", 35, 208);
+
+            //Mateo: this here will check if the back button is pressed
+            float x, y;
+            while (true)
+            {
+                if (LCD.Touch(&x, &y)) 
+                {
+                    if (x > 10 && x < 110 && y > 200 && y < 230)
+                    {
+                        break; 
+                    }
+                }
+            }
+        }
+
+        //This will show the difficulty options after the users presses play
+        int SelectDifficulty() {
+        LCD.Clear(BLACK);
+        LCD.WriteLine("SELECT DIFFICULTY");
+
+        // Draw Normal Button
+        LCD.DrawRectangle(60, 60, 200, 40);
+        LCD.WriteAt("Normal", 130, 72);
+
+        // Draw Hard Button
+        LCD.DrawRectangle(60, 120, 200, 40);
+        LCD.WriteAt("Hard", 140, 132);
+
+        // Draw Back Button
+        LCD.DrawRectangle(60, 180, 200, 40);
+        LCD.WriteAt("Back", 140, 192);
+
+        float x, y;
+        while (true) {
+            if (LCD.Touch(&x, &y))
+            {
+                if (x > 60 && x < 260 && y > 60 && y < 100)
+                {
+                    return 1; // Normal
+                }
+                else if (x > 60 && x < 260 && y > 120 && y < 160)
+                {
+                    return 2; // Hard
+                }
+                else if (x > 60 && x < 260 && y > 180 && y < 220)
+                {
+                    return 0; // Back
+                }
+            }
+        }
+    }
+
     public:
         
         //Mateo: This is the main menu loop
