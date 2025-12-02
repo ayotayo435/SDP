@@ -21,7 +21,6 @@ class menu {
             float x, y;
             while (true)
             {
-                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -47,7 +46,6 @@ class menu {
             float x, y;
             while (true)
             {
-                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -72,7 +70,6 @@ class menu {
             float x, y;
             while (true)
             {
-                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -85,39 +82,47 @@ class menu {
 
         //This will show the difficulty options after the users presses play
         int SelectDifficulty() {
-        LCD.Clear(BLACK);
-        LCD.WriteLine("SELECT DIFFICULTY");
+            LCD.Clear(BLACK);
+            LCD.WriteLine("SELECT DIFFICULTY");
 
-        // Draw Normal Button
-        LCD.DrawRectangle(60, 60, 200, 40);
-        LCD.WriteAt("Normal", 130, 72);
+            // Draw Normal Button
+            LCD.DrawRectangle(60, 60, 200, 40);
+            LCD.WriteAt("Normal", 130, 72);
 
-        // Draw Hard Button
-        LCD.DrawRectangle(60, 120, 200, 40);
-        LCD.WriteAt("Hard", 140, 132);
+            // Draw Hard Button
+            LCD.DrawRectangle(60, 120, 200, 40);
+            LCD.WriteAt("Hard", 140, 132);
 
-        // Draw Back Button
-        LCD.DrawRectangle(60, 180, 200, 40);
-        LCD.WriteAt("Back", 140, 192);
+            // Draw Back Button
+            LCD.DrawRectangle(60, 180, 200, 40);
+            LCD.WriteAt("Back", 140, 192);
 
-        float x, y;
-        while (true) {
-            while (!LCD.Touch(&x, &y)) {}
-            if (LCD.Touch(&x, &y))
-            {
-                if (x > 60 && x < 260 && y > 60 && y < 100)
-                {
-                    return 1; // Normal
-                }
-                else if (x > 60 && x < 260 && y > 120 && y < 160)
-                {
-                    return 2; // Hard
-                }
-                else if (x > 60 && x < 260 && y > 180 && y < 220)
-                {
-                    return 0; // Back
-                }
+            // 2. Wait for the user to RELEASE the screen (un-click)
+            // We use temporary variables because we don't care where they are touching,
+            // we just want to know IF they are still touching.
+            float trash_x, trash_y;
+            while (LCD.Touch(&trash_x, &trash_y)) {
+                // Do nothing, just wait for them to let go
             }
+
+            float x, y;
+            while (true) {
+                while (!LCD.Touch(&x, &y)) {}
+                if (LCD.Touch(&x, &y))
+                {
+                    if (x > 60 && x < 260 && y > 60 && y < 100)
+                    {
+                        return 1; // Normal
+                    }
+                        else if (x > 60 && x < 260 && y > 120 && y < 160)
+                    {
+                        return 2; // Hard
+                    }
+                    else if (x > 60 && x < 260 && y > 180 && y < 220)
+                    {
+                    return 0; // Back
+                    }
+                }
         }
     }
 
@@ -151,9 +156,6 @@ class menu {
 
                 // Wait for input
                 while (!LCD.Touch(&x, &y)) {}
-
-                //touch S
-                while (LCD.Touch(&x, &y)) {}
 
                 // Handle Input
                 if (x > 60 && x < 260 && y > 50 && y < 80) {
