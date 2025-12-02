@@ -159,6 +159,11 @@ class menu {
 
                 // Handle Input
                 if (x > 60 && x < 260 && y > 50 && y < 80) {
+
+                    // Wait for release BEFORE going to the next screen
+                    float trash_x, trash_y;
+                    while(LCD.Touch(&trash_x, &trash_y)) {}
+                    
                     // Play Game -> Go to difficulty selection
                     difficultyChoice = SelectDifficulty();
                     if (difficultyChoice != 0) {
