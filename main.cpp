@@ -233,8 +233,8 @@ int main()
     
     if (difficulty == 1)
     {
-        getQuestions();
         LCD.WriteLine("Mode: NORMAL");
+        getQuestions();
         //StartNormalGame();
     } 
     else
