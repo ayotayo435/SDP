@@ -61,9 +61,6 @@ class menu {
                 if (x > 60 && x < 260 && y > 170 && y < 200)
                 {
                     ViewCredits();
-                    
-                    //REMOVE THIS RAAAAHHHH
-                    return 1;
                 }
             }
         }
@@ -73,17 +70,16 @@ class menu {
 
 int main()
 {
-    menu my_menu;
+    menu myMenu;
 
-    int testing = my_menu.Run();
+    myMenu.Run();
 
 
     
     
     
     
-    
-    
+
     while (1) {
         LCD.Update();
         // Never end
