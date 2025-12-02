@@ -96,18 +96,21 @@ class menu {
             // Draw Back Button
             LCD.DrawRectangle(60, 180, 200, 40);
             LCD.WriteAt("Back", 140, 192);
+            
 
-            // 2. Wait for the user to RELEASE the screen (un-click)
-            // We use temporary variables because we don't care where they are touching,
-            // we just want to know IF they are still touching.
+            // IMPORTANT FIX STARTS HERE (very frustrating to figure this out)
+
+            // Wait for the user to RELEASE the screen (un-click)
+            // use temporary variables because we don't care where they are touching,
+            // just want to know IF they are still touching.
             float trash_x, trash_y;
             while (LCD.Touch(&trash_x, &trash_y)) {
                 // Do nothing, just wait for them to let go
             }
+            
 
             float x, y;
             while (true) {
-                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y))
                 {
                     if (x > 60 && x < 260 && y > 60 && y < 100)
@@ -154,13 +157,15 @@ class menu {
                 LCD.DrawRectangle(60, 170, 200, 30);
                 LCD.WriteAt("4. Credits", 100, 178);
                 
-                // 2. Wait for the user to RELEASE the screen (un-click)
-                // We use temporary variables because we don't care where they are touching,
-                // we just want to know IF they are still touching.
+                
+            }
+
+                //Wait for the user to RELEASE the screen (un-click)
+                //We use temporary variables because we don't care where they are touching,
+                //we just want to know IF they are still touching.
                 float trash_x, trash_y;
                 while (LCD.Touch(&trash_x, &trash_y)) {
                 // Do nothing, just wait for them to let go
-            }
 
 
                 // Wait for input
