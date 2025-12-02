@@ -152,6 +152,9 @@ class menu {
                 // Wait for input
                 while (!LCD.Touch(&x, &y)) {}
 
+                //touch S
+                while (LCD.Touch(&x, &y)) {}
+
                 // Handle Input
                 if (x > 60 && x < 260 && y > 50 && y < 80) {
                     // Play Game -> Go to difficulty selection
