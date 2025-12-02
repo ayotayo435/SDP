@@ -127,46 +127,70 @@ class menu {
             float x, y;
             int difficultyChoice = 0;
 
-            while (1) 
-            {
+            while (1) {
                 LCD.Clear(BLACK);
-
-                //The title screen
                 LCD.SetFontColor(WHITE);
                 LCD.WriteLine("EDUCATIONAL DASH");
+            
+                // Draw Main Menu Buttons
+                LCD.DrawRectangle(60, 50, 200, 30); 
+                LCD.WriteAt("1. Play Game", 100, 58);
 
-                //Draw main menu buttons
+                LCD.DrawRectangle(60, 90, 200, 30);
+                LCD.WriteAt("2. Statistics", 100, 98);
+
+                LCD.DrawRectangle(60, 130, 200, 30);
+                LCD.WriteAt("3. Instructions", 100, 138);
+
                 LCD.DrawRectangle(60, 170, 200, 30);
                 LCD.WriteAt("4. Credits", 100, 178);
 
-                //Wait for input
+                // Wait for input
                 while (!LCD.Touch(&x, &y)) {}
 
-                if (x > 60 && x < 260 && y > 170 && y < 200)
-                {
+                // Handle Input
+                if (x > 60 && x < 260 && y > 50 && y < 80) {
+                    // Play Game -> Go to difficulty selection
+                    difficultyChoice = SelectDifficulty();
+                    if (difficultyChoice != 0) {
+                        return difficultyChoice; // Return difficulty to main to start game
+                    }
+                }
+                else if (x > 60 && x < 260 && y > 90 && y < 120) {
+                    ViewStats();
+                }
+                else if (x > 60 && x < 260 && y > 130 && y < 160) {
+                    ViewInstructions();
+                }
+                else if (x > 60 && x < 260 && y > 170 && y < 200) {
                     ViewCredits();
                 }
-            }
+
         }
+    }
 
 };
 
 
 int main()
 {
+    // 1. Instantiate the menu class
     menu myMenu;
 
-    myMenu.Run();
+    // 2. Run the menu and capture the result
+    int difficulty = myMenu.Run();
 
-
+    // 3. Start the game based on the result
+    LCD.Clear(BLACK);
+    LCD.WriteLine("Starting Game...");
     
-    
-    
-    
-
-    while (1) {
-        LCD.Update();
-        // Never end
+    if (difficulty == 1) {
+        LCD.WriteLine("Mode: NORMAL");
+        // StartNormalGame();
+    } else {
+        LCD.WriteLine("Mode: HARD");
+        // StartHardGame();
     }
+
     return 0;
 }
