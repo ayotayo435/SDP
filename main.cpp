@@ -208,7 +208,6 @@ int getQuestions()
     for (int i = 1; i = 10; i++)
     {
         LCD.Clear(BLACK);
-        
         LCD.Write("Input question");
         LCD.WriteLine(i);
         struct q1{
@@ -234,6 +233,7 @@ int main()
     
     if (difficulty == 1)
     {
+        getQuestions();
         LCD.WriteLine("Mode: NORMAL");
         //StartNormalGame();
     } 
@@ -243,7 +243,6 @@ int main()
         //StartHardGame();
     }   
 
-    getQuestions();
     while (1) {
         LCD.Update();
         // Never end
