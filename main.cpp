@@ -153,17 +153,25 @@ class menu {
 
                 LCD.DrawRectangle(60, 170, 200, 30);
                 LCD.WriteAt("4. Credits", 100, 178);
+                
+                // 2. Wait for the user to RELEASE the screen (un-click)
+                // We use temporary variables because we don't care where they are touching,
+                // we just want to know IF they are still touching.
+                float trash_x, trash_y;
+                while (LCD.Touch(&trash_x, &trash_y)) {
+                // Do nothing, just wait for them to let go
+            }
+
 
                 // Wait for input
                 while (!LCD.Touch(&x, &y)) {}
 
+                
+
                 // Handle Input
                 if (x > 60 && x < 260 && y > 50 && y < 80) {
 
-                    // Wait for release BEFORE going to the next screen
-                    float trash_x, trash_y;
-                    while(LCD.Touch(&trash_x, &trash_y)) {}
-                    
+
                     // Play Game -> Go to difficulty selection
                     difficultyChoice = SelectDifficulty();
                     if (difficultyChoice != 0) {
