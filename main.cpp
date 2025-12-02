@@ -227,6 +227,7 @@ int getQuestions()
         {
             Keyboard.waitAnyKey();
             q1[j] = Keyboard.lastChar();
+            LCD.WriteLine(q1[j]);
         }
     }
 
