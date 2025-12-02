@@ -139,7 +139,8 @@ class menu {
             float x, y;
             int difficultyChoice = 0;
 
-            while (1) {
+            while (1)
+            {
                 LCD.Clear(BLACK);
                 LCD.SetFontColor(WHITE);
                 LCD.WriteLine("EDUCATIONAL DASH");
@@ -172,7 +173,8 @@ class menu {
                 
 
                 // Handle Input
-                if (x > 60 && x < 260 && y > 50 && y < 80) {
+                if (x > 60 && x < 260 && y > 50 && y < 80)
+                {
 
 
                     // Play Game -> Go to difficulty selection
@@ -181,13 +183,16 @@ class menu {
                         return difficultyChoice; // Return difficulty to main to start game
                     }
                 }
-                else if (x > 60 && x < 260 && y > 90 && y < 120) {
+                else if (x > 60 && x < 260 && y > 90 && y < 120)
+                {
                     ViewStats();
                 }
-                else if (x > 60 && x < 260 && y > 130 && y < 160) {
+                else if (x > 60 && x < 260 && y > 130 && y < 160)
+                {
                     ViewInstructions();
                 }
-                else if (x > 60 && x < 260 && y > 170 && y < 200) {
+                else if (x > 60 && x < 260 && y > 170 && y < 200)
+                {
                     ViewCredits();
                 }
 
@@ -199,22 +204,25 @@ class menu {
 
 int main()
 {
-    // 1. Instantiate the menu class
+    // Instantiate the menu class
     menu myMenu;
 
-    // 2. Run the menu and capture the result
+    // Run the menu and capture the result
     int difficulty = myMenu.Run();
 
-    // 3. Start the game based on the result
+    //Start the game based on the result
     LCD.Clear(BLACK);
     LCD.WriteLine("Starting Game...");
     
-    if (difficulty == 1) {
+    if (difficulty == 1)
+    {
         LCD.WriteLine("Mode: NORMAL");
-        // StartNormalGame();
-    } else {
+        //StartNormalGame();
+    } 
+    else
+    {
         LCD.WriteLine("Mode: HARD");
-        // StartHardGame();
+        //StartHardGame();
     }
 
     while (1) {
