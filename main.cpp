@@ -205,16 +205,11 @@ class menu {
 int getQuestions()
 {
     
-    for (int i = 1; i = 10; i++)
+    for (int i = 1; i <= 10; i++)
     {
         LCD.Clear(BLACK);
         LCD.Write("Input question");
         LCD.WriteLine(i);
-        struct q1{
-            char question1[250]; 
-            char answer1right[250]; 
-            char answer2wrong[250];
-        };
     }
 
 }
