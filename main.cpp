@@ -98,7 +98,9 @@ class menu {
             LCD.WriteAt("Back", 140, 192);
             
             
-            // 2. Wait for the user to RELEASE the screen (un-click)
+            // VERY IMPORTANT FIX (crashing out figuring this out :c ) 
+
+            // Wait for the user to RELEASE the screen (un-click)
             // We use temporary variables because we don't care where they are touching,
             // we just want to know IF they are still touching.
             float trash_x, trash_y;
@@ -155,7 +157,7 @@ class menu {
                 LCD.DrawRectangle(60, 170, 200, 30);
                 LCD.WriteAt("4. Credits", 70, 178);
                 
-                // 2. Wait for the user to RELEASE the screen (un-click)
+                // Wait for the user to RELEASE the screen (un-click)
                 // We use temporary variables because we don't care where they are touching,
                 // we just want to know IF they are still touching.
                 float trash_x, trash_y;
