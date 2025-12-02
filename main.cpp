@@ -21,6 +21,7 @@ class menu {
             float x, y;
             while (true)
             {
+                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -46,6 +47,7 @@ class menu {
             float x, y;
             while (true)
             {
+                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -70,6 +72,7 @@ class menu {
             float x, y;
             while (true)
             {
+                while (!LCD.Touch(&x, &y)) {}
                 if (LCD.Touch(&x, &y)) 
                 {
                     if (x > 10 && x < 110 && y > 200 && y < 230)
@@ -99,6 +102,7 @@ class menu {
 
         float x, y;
         while (true) {
+            while (!LCD.Touch(&x, &y)) {}
             if (LCD.Touch(&x, &y))
             {
                 if (x > 60 && x < 260 && y > 60 && y < 100)
@@ -196,6 +200,6 @@ int main()
         LCD.Update();
         // Never end
     }
-    
+
     return 0;
 }
