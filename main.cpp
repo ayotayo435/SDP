@@ -144,16 +144,16 @@ class menu {
             
                 // Draw Main Menu Buttons
                 LCD.DrawRectangle(60, 50, 200, 30); 
-                LCD.WriteAt("1. Play Game", 100, 58);
+                LCD.WriteAt("1. Play Game", 70, 58);
 
                 LCD.DrawRectangle(60, 90, 200, 30);
-                LCD.WriteAt("2. Statistics", 100, 98);
+                LCD.WriteAt("2. Statistics", 70, 98);
 
                 LCD.DrawRectangle(60, 130, 200, 30);
                 LCD.WriteAt("3. Instructions", 70, 138);
 
                 LCD.DrawRectangle(60, 170, 200, 30);
-                LCD.WriteAt("4. Credits", 100, 178);
+                LCD.WriteAt("4. Credits", 70, 178);
                 
                 // 2. Wait for the user to RELEASE the screen (un-click)
                 // We use temporary variables because we don't care where they are touching,
