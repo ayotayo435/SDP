@@ -150,7 +150,7 @@ class menu {
                 LCD.WriteAt("2. Statistics", 100, 98);
 
                 LCD.DrawRectangle(60, 130, 200, 30);
-                LCD.WriteAt("3. Instructions", 100, 138);
+                LCD.WriteAt("3. Instructions", 70, 138);
 
                 LCD.DrawRectangle(60, 170, 200, 30);
                 LCD.WriteAt("4. Credits", 100, 178);
