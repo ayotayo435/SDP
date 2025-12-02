@@ -1,6 +1,7 @@
 #include "FEHLCD.h"
 #include "FEHUtility.h"
 
+
 //Mateo: I've written a class to help keep all he menu logic organized
 class menu {
     private:
@@ -201,6 +202,23 @@ class menu {
 
 };
 
+int getQuestions()
+{
+    
+    for (int i = 1; i = 10; i++)
+    {
+        LCD.Clear(BLACK);
+        
+        LCD.Write("Input question");
+        LCD.WriteLine(i);
+        struct q1{
+            char question1[250]; 
+            char answer1right[250]; 
+            char answer2wrong[250];
+        }
+    }
+
+}
 
 int main()
 {
@@ -223,8 +241,9 @@ int main()
     {
         LCD.WriteLine("Mode: HARD");
         //StartHardGame();
-    }
+    }   
 
+    getQuestions();
     while (1) {
         LCD.Update();
         // Never end
