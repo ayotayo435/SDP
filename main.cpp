@@ -11,7 +11,7 @@ class menu {
             LCD.Clear(BLACK);
             LCD.WriteLine("CREDITS:");
             //Mateo: I forgor your guy's last names
-            LCD.WriteLine("Developers: Mateo Polt, Seima, Auedriy");
+            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Auedriy");
 
             // Mateo: drawing the back button
             LCD.DrawRectangle(10, 200, 100, 30);
