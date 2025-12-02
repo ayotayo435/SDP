@@ -215,7 +215,7 @@ int getQuestions()
             char question1[250]; 
             char answer1right[250]; 
             char answer2wrong[250];
-        }
+        };
     }
 
 }
