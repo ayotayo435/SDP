@@ -1,5 +1,7 @@
 #include "FEHLCD.h"
 #include "FEHUtility.h"
+#include "FEHKeyboard.h"
+
 
 //Mateo: I've written a class to help keep all he menu logic organized
 class menu {
@@ -11,7 +13,7 @@ class menu {
             LCD.Clear(BLACK);
             LCD.WriteLine("CREDITS:");
             //Mateo: I forgor your guy's last names
-            LCD.WriteLine("Developers: Mateo Polt, Seima, Auedriy");
+            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Auedriy");
 
             // Mateo: drawing the back button
             LCD.DrawRectangle(10, 200, 100, 30);
@@ -201,6 +203,35 @@ class menu {
 
 };
 
+int getQuestions()
+{
+    // Andriy apologizes for his lack of coding skills
+    char q1[250];
+    char rightq1ans[250];
+    char wrongq1ans[250];
+    char q2[250];
+    char rightq2ans[250];
+    char wrongq2ans[250];
+    char q3[250];
+    char rightq3ans[250];
+    char wrongq3ans[250];
+    char q4[250];
+    char rightq4ans[250];
+    char wrongq4ans[250];
+    for (int i = 1; i <= 4; i++)
+    {
+        LCD.Clear(BLACK);
+        LCD.Write("Input question ");
+        LCD.WriteLine(i);
+        for (int j = 1; j <= 250; j++)
+        {
+            Keyboard.waitAnyKey();
+            q1[j] = Keyboard.lastChar();
+            LCD.WriteLine(q1[j]);
+        }
+    }
+
+}
 
 int main()
 {
@@ -217,13 +248,14 @@ int main()
     if (difficulty == 1)
     {
         LCD.WriteLine("Mode: NORMAL");
+        getQuestions();
         //StartNormalGame();
     } 
     else
     {
         LCD.WriteLine("Mode: HARD");
         //StartHardGame();
-    }
+    }   
 
     while (1) {
         LCD.Update();
