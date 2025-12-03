@@ -203,35 +203,6 @@ class menu {
 
 };
 
-int getQuestions()
-{
-    // Andriy apologizes for his lack of coding skills
-    char q1[250];
-    char rightq1ans[250];
-    char wrongq1ans[250];
-    char q2[250];
-    char rightq2ans[250];
-    char wrongq2ans[250];
-    char q3[250];
-    char rightq3ans[250];
-    char wrongq3ans[250];
-    char q4[250];
-    char rightq4ans[250];
-    char wrongq4ans[250];
-    for (int i = 1; i <= 4; i++)
-    {
-        LCD.Clear(BLACK);
-        LCD.Write("Input question ");
-        LCD.WriteLine(i);
-        for (int j = 1; j <= 250; j++)
-        {
-            Keyboard.waitAnyKey();
-            q1[j] = Keyboard.lastChar();
-            LCD.WriteLine(q1[j]);
-        }
-    }
-
-}
 
 int main()
 {
@@ -248,7 +219,6 @@ int main()
     if (difficulty == 1)
     {
         LCD.WriteLine("Mode: NORMAL");
-        getQuestions();
         //StartNormalGame();
     } 
     else
