@@ -5,7 +5,7 @@ int PlayerFunction()
 {
     //while (true)
     {  
-        //while (player touching ground position)
+        //while (player is at ground position)
         {
             //don't change position
 
@@ -19,6 +19,16 @@ int PlayerFunction()
         //while (holding up arrow)
         {
             //change y position to go up
+        }
+
+        //while (player is at roof position)
+        {
+            //don't change position
+
+            //if (!up arrow pressed)
+            {
+                //change y position to go down
+            }
         }
     }
 }
