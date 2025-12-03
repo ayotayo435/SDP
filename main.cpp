@@ -1,7 +1,7 @@
 #include "FEHLCD.h"
 #include "FEHUtility.h"
 #include "FEHKeyboard.h"
-
+#include "FEHRandom.h"
 
 //Mateo: I've written a class to help keep all he menu logic organized
 class menu {
