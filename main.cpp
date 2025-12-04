@@ -37,7 +37,7 @@ class menu {
             }
         }
 
-        // this function will print the instructions to the screen
+        // Mateo: this function will print the instructions to the screen
         void ViewInstructions() {
             LCD.Clear(BLACK);
             LCD.WriteLine("INSTRUCTIONS:");
@@ -62,7 +62,7 @@ class menu {
             }
         }
 
-        // This function will show the stats
+        //Mateo: This function will show the stats
         void ViewStats() {
             LCD.Clear(BLACK);
             LCD.WriteLine("STATISTICS:");
@@ -86,7 +86,7 @@ class menu {
             }
         }
 
-        //This will show the difficulty options after the users presses play
+        //Mateo: This will show the difficulty options after the users presses play
         int SelectDifficulty() {
             LCD.Clear(BLACK);
             LCD.WriteLine("SELECT DIFFICULTY");
@@ -104,7 +104,7 @@ class menu {
             LCD.WriteAt("Back", 140, 192);
             
             
-            // VERY IMPORTANT FIX (crashing out figuring this out :c ) 
+            //Mateo: VERY IMPORTANT FIX (crashing out figuring this out :c ) 
 
             // Wait for the user to RELEASE the screen (un-click)
             // We use temporary variables because we don't care where they are touching,
@@ -240,10 +240,14 @@ int getQuestions()
 
 */
 
+// Mateo: This is the LevelFunction which will load
+//after the user selects a difficulty
+// The function will handle all the gameplay stuff 
+// like the questions, answer portals, character, etc?
 void LevelFunction()
 {
     //---------------------------------
-    /*---THIS IS THE PLAYER LOGIC---*/
+    /*--- Mateo: THIS IS THE PLAYER LOGIC---*/
     /*----------DONT FORGET----------*/
     //---------------------------------
 
