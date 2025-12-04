@@ -1,7 +1,11 @@
 #include "FEHLCD.h"
 #include "FEHUtility.h"
 #include "FEHKeyboard.h"
-#include "FEHRandom.h"
+
+//global variables
+float playerX = 10;
+float playerY = 220;
+
 
 //Mateo: I've written a class to help keep all he menu logic organized
 class menu {
@@ -203,6 +207,7 @@ class menu {
 
 };
 
+/*
 int getQuestions()
 {
     // Andriy apologizes for his lack of coding skills
@@ -233,6 +238,78 @@ int getQuestions()
 
 }
 
+*/
+
+void LevelFunction()
+{
+    //---------------------------------
+    /*---THIS IS THE PLAYER LOGIC---*/
+    /*----------DONT FORGET----------*/
+    //---------------------------------
+
+    while(true)
+    {  
+        
+        while (playerY == 220)
+        {
+            //don't change position
+
+            //erase old player
+            LCD.SetFontColor(BLACK);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+
+            if (Keyboard.isPressed(KEY_W))
+            {
+                //change y position to go up
+                playerY = playerY - 5;
+            }
+    
+
+            //draw player
+            LCD.SetFontColor(WHITE);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+            Sleep(5);
+        }
+        
+
+        while (Keyboard.isPressed(KEY_W))
+        {
+            //erase old player
+            LCD.SetFontColor(BLACK);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+
+            //change y position to go up AND STOP AT ROOF
+            if(playerY != 10)
+            {
+            playerY = playerY - 5;
+            }
+
+            //draw player
+            LCD.SetFontColor(WHITE);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+            Sleep(5);
+        }
+  
+        //--- GRABITY LOGIC IMPORTANT ---
+            //erase old player
+            LCD.SetFontColor(BLACK);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+
+            //change y position to go down
+            playerY = playerY + 5;
+
+            //draw player
+            LCD.SetFontColor(WHITE);
+            //REPLACE THIS WITH THE CHARACTER ART
+            LCD.FillRectangle(playerX, playerY, 12, 12);
+            Sleep(5);
+    }
+
 int main()
 {
     // Instantiate the menu class
@@ -248,8 +325,8 @@ int main()
     if (difficulty == 1)
     {
         LCD.WriteLine("Mode: NORMAL");
-        getQuestions();
-        //StartNormalGame();
+        //getQuestions();
+        LevelFunction();
     } 
     else
     {
