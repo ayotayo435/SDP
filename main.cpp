@@ -330,8 +330,11 @@ int main()
     
     if (difficulty == 1)
     {
+        
         LCD.WriteLine("Mode: NORMAL");
-        Sleep(5.0);
+        Sleep(3.0);
+        //clear the 'loding screen'
+        LCD.Clear(BLACK);
         LevelFunction();
     } 
     else
