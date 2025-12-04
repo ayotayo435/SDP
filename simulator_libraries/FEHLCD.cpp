@@ -817,7 +817,15 @@ namespace FEHIcon
         LCD.SetFontColor(color);
         LCD.DrawRectangle(x_start, y_start, width, height);
         LCD.SetFontColor(textcolor);
-        LCD.WriteAt(label, x_start + ((width - (strlen(label) * 12)) / 2), y_start + ((height - 17) / 2)); // equation to center text inside the icon
+       
+        // Center text using current font scale
+        float fs = LCD.GetFontScale();
+        int charWidth = (int)(CHAR_WIDTH * fs);
+        int charHeight = (int)(CHAR_HEIGHT * fs);
+        int textWidth = (int)(strlen(label) * charWidth);
+        int tx = x_start + ((width - textWidth) / 2);
+        int ty = y_start + ((height - charHeight) / 2);
+        LCD.WriteAt(label, tx, ty); // center text inside the icon
     }
 
     /* Icon function to make the icon selected and set */
@@ -939,8 +947,8 @@ namespace FEHIcon
     {
         int xs = left;
         int ys = top;
-        float total_w = (320. - left - right);
-        float total_h = (240. - top - bot);
+        float total_w = (LCD_WIDTH - left - right);
+        float total_h = (LCD_HEIGHT - top - bot);
         int w = total_w / cols;
         int h = total_h / rows;
         int nx, ny, N = 0;

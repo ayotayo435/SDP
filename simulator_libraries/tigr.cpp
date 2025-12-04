@@ -381,10 +381,13 @@ void tigrLine(Tigr *bmp, int x0, int y0, int x1, int y1, TPixel color)
 		sy = -1;
 	err = dx - dy;
 
-	tigrPlot(bmp, x0, y0, color);
-	while (x0 != x1 || y0 != y1)
+	while (1)
 	{
 		tigrPlot(bmp, x0, y0, color);
+
+		if (x0 == x1 && y0 == y1)
+			break;
+            
 		e2 = 2 * err;
 		if (e2 > -dy)
 		{
