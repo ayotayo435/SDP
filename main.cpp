@@ -247,7 +247,7 @@ int getQuestions()
 void LevelFunction()
 {
     //---------------------------------
-    /*--- Mateo: THIS IS THE PLAYER LOGIC---*/
+    /* Mateo: THIS IS THE PLAYER LOGIC*/
     /*----------DONT FORGET----------*/
     //---------------------------------
 
