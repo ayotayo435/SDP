@@ -331,7 +331,8 @@ int main()
     if (difficulty == 1)
     {
         LCD.WriteLine("Mode: NORMAL");
-        //getQuestions();
+        Sleep(5.0);
+        LevelFunction();
     } 
     else
     {
