@@ -1,6 +1,7 @@
 #include "FEHLCD.h"
 #include "FEHUtility.h"
 #include "FEHKeyboard.h"
+#include "FEHRandom.h"
 
 //global variables
 float playerX = 10;
@@ -365,7 +366,7 @@ void LevelFunction()
 
         }
         */
-       
+
         //--- GRABITY LOGIC IMPORTANT ---
             //erase old player
             LCD.SetFontColor(BLACK);
