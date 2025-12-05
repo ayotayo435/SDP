@@ -3,13 +3,16 @@
 #include "FEHKeyboard.h"
 #include "FEHRandom.h"
 
+//Defines constants for the SDP simulator window dimensions
+#define SCREENY 239
+#define SCREENX 319
+
 //global variables
 float playerX = 10;
 float playerY = 220;
 
 //Seima: Creates variables for the coordinates of the portals.
-float portalTopX;
-float portalTopY;
+float portalX;
 
 float portalBottomX;
 float portalBottomY;
@@ -223,7 +226,7 @@ int getQuestions()
     float correctAns[10];
     float wrongAns[10];
     for (int i = 1; i <= 10; i++){
-        rand = Random.RandInt()
+        int rand = Random.RandInt();
         if (rand <= 8192){
             operations[i] = 'a';
         }
@@ -237,7 +240,7 @@ int getQuestions()
             operations[i] = 'd';
         }
         for (int j = 1; j<=2; j++){
-            rand = Random.RandInt()
+            rand = Random.RandInt();
             if (rand <= 5461){
             questionNumbers[i][j] = 1 * difficulty;
             }
@@ -269,7 +272,7 @@ int getQuestions()
         else{
             correctAns[i] = questionNumbers[i][1] / questionNumbers[i][2];
         }
-        rand = Random.RandInt()
+        rand = Random.RandInt();
         if (rand <= 5461){
             wrongAns[i] = correctAns[i] + 1;
         }
@@ -354,17 +357,21 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 12, 12);
             Sleep(5);
         }
+        
         /*
         //Seima: Checks if player collides with portal
-         if((playerX + 10 == portalTopX) && (playerY == 119.5 && playerY > 0))
-        {
+         if(playerX == portalX)
+         {
+            if(playerY > (SCREENY / 2.0))
+            {
+                
+            }
+            else
+            {
 
-        }
-
-        else if (playerX + 10 == portalBottomX && (playerY == 239 && playerY > 119.5))
-        {
-
-        }
+            }
+         }
+        
         */
 
         //--- GRABITY LOGIC IMPORTANT ---
