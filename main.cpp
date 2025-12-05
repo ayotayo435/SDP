@@ -6,6 +6,12 @@
 float playerX = 10;
 float playerY = 220;
 
+//Seima: Creates variables for the coordinates of the portals.
+float portalTopX;
+float portalTopY;
+
+float portalBottomX;
+float portalBottomY;
 
 //Mateo: I've written a class to help keep all he menu logic organized
 class menu {
@@ -240,10 +246,13 @@ int getQuestions()
 
 */
 
+
+
 // Mateo: This is the LevelFunction which will load
 //after the user selects a difficulty
 // The function will handle all the gameplay stuff 
 // like the questions, answer portals, character, etc?
+//Seima: Added portals and their functionality after the y pressed is checked
 void LevelFunction()
 {
     //---------------------------------
@@ -297,7 +306,19 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 12, 12);
             Sleep(5);
         }
-  
+        /*
+        //Seima: Checks if player collides with portal
+         if((playerX + 10 == portalTopX) && (playerY == 119.5 && playerY > 0))
+        {
+
+        }
+
+        else if (playerX + 10 == portalBottomX && (playerY == 239 && playerY > 119.5))
+        {
+
+        }
+        */
+       
         //--- GRABITY LOGIC IMPORTANT ---
             //erase old player
             LCD.SetFontColor(BLACK);
