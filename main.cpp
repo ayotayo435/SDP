@@ -218,7 +218,10 @@ class menu {
 
 };
 
+// Mateo: Someone fix this
+// >:C
 
+/*
 int getQuestions()
 {
     // sorry to whoever has to fix this when it inevitably breaks
@@ -295,7 +298,7 @@ int getQuestions()
     }
 
 }
-
+*/
 
 
 
