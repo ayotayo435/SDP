@@ -311,6 +311,16 @@ void LevelFunction()
     /*----------DONT FORGET----------*/
     //---------------------------------
 
+    //declares image of our player
+    FEHImage WaveDown;
+    FEHImage WaveStraight;
+    FEHImage WaveUp;
+
+    //Open player image
+    WaveDown.Open("WaveIconDown.png");
+    WaveStraight.Open("WaveIconStraight.png");
+    WaveUp.Open("WaveIconUp.png");
+
     while(true)
     {  
         
@@ -320,8 +330,7 @@ void LevelFunction()
 
             //erase old player
             LCD.SetFontColor(BLACK);
-            //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            LCD.FillRectangle(playerX, playerY, 20, 20);
 
             if (Keyboard.isPressed(KEY_W))
             {
@@ -331,9 +340,10 @@ void LevelFunction()
     
 
             //draw player
-            LCD.SetFontColor(WHITE);
+            //LCD.SetFontColor(WHITE);
             //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            //LCD.FillRectangle(playerX, playerY, 12, 12);
+            WaveStraight.Draw(playerX, playerY);
             Sleep(5);
         }
         
@@ -342,35 +352,42 @@ void LevelFunction()
         {
             //erase old player
             LCD.SetFontColor(BLACK);
-            //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            LCD.FillRectangle(playerX, playerY, 20, 20);
+            
 
             //change y position to go up AND STOP AT ROOF
-            if(playerY != 10)
+            if (playerY != 10)
             {
             playerY = playerY - 5;
+            WaveUp.Draw(playerX, playerY);
             }
+            else
+            {
+                WaveStraight.Draw(playerX, playerY);
+            }
+            
 
             //draw player
-            LCD.SetFontColor(WHITE);
+            //LCD.SetFontColor(WHITE);
             //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            //LCD.FillRectangle(playerX, playerY, 12, 12);
+            //WaveUp.Draw(playerX, playerY);
             Sleep(5);
         }
-
+  
         //--- GRABITY LOGIC IMPORTANT ---
             //erase old player
             LCD.SetFontColor(BLACK);
-            //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            LCD.FillRectangle(playerX, playerY, 20, 20);
 
             //change y position to go down
             playerY = playerY + 5;
 
             //draw player
-            LCD.SetFontColor(WHITE);
+            //LCD.SetFontColor(WHITE);
             //REPLACE THIS WITH THE CHARACTER ART
-            LCD.FillRectangle(playerX, playerY, 12, 12);
+            //LCD.FillRectangle(playerX, playerY, 12, 12);
+            WaveDown.Draw(playerX, playerY);
             Sleep(5);
     }
 
@@ -378,7 +395,7 @@ void LevelFunction()
     /*--- END OF PLAYER LOGIC-----*/
     //------------------------------
 
-    
+
     /*
         //Seima: Checks if player collides with portal
          if(playerX == portalX)
