@@ -2,6 +2,7 @@
 #include "FEHUtility.h"
 #include "FEHKeyboard.h"
 #include "FEHRandom.h"
+#include "FEHImages.h"
 
 //Defines constants for the SDP simulator window dimensions
 #define SCREENY 239
