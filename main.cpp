@@ -357,22 +357,6 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 12, 12);
             Sleep(5);
         }
-        
-        /*
-        //Seima: Checks if player collides with portal
-         if(playerX == portalX)
-         {
-            if(playerY > (SCREENY / 2.0))
-            {
-                
-            }
-            else
-            {
-
-            }
-         }
-        
-        */
 
         //--- GRABITY LOGIC IMPORTANT ---
             //erase old player
@@ -393,6 +377,24 @@ void LevelFunction()
     //------------------------------
     /*--- END OF PLAYER LOGIC-----*/
     //------------------------------
+
+    
+    /*
+        //Seima: Checks if player collides with portal
+         if(playerX == portalX)
+         {
+            if(playerY > (SCREENY / 2.0))
+            {
+                
+            }
+            else
+            {
+
+            }
+         }
+        
+        */
+
 
 }
 
