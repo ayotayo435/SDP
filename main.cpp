@@ -422,24 +422,33 @@ void LevelFunction()
             //------------------------------
             /*--- END OF PLAYER LOGIC-----*/
             //------------------------------
+            //Portal Logic
+            while (true)
+            {
+                //Sets portal to right end of screen
+                portalX = 300;
+
+                //(Re)draws portals
+                PortalA.Draw(portalX, portalTopY);
+                PortalB.Draw(portalX, portalBottomY);
+
+                //Portal moves left until it collides with the player
+                while(portalX > playerX)
+                {
+                    portalX--;
+                    PortalA.Draw(portalX, portalTopY);
+                    PortalB.Draw(portalX, portalBottomY);
+                }
+
+            }
+            
+
+
+
     }
 
 
-    /*
-        //Seima: Checks if player collides with portal
-         if(playerX == portalX)
-         {
-            if(playerY > (SCREENY / 2.0))
-            {
-                
-            }
-            else
-            {
-
-            }
-         }
-        
-        */
+    
 
         //The protals will come towards the player, with the top portal
         //taking the top of half of the screen and the other portal taking the 
