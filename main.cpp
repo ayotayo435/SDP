@@ -319,6 +319,7 @@ void LevelFunction()
     FEHImage WaveDown;
     FEHImage WaveStraight;
     FEHImage WaveUp;
+    FEHImage Obstacle;
     int ObsXY[40][40];
     //Open player image
     WaveDown.Open("WaveIconDown.png");
