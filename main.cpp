@@ -422,7 +422,7 @@ void LevelFunction()
             //------------------------------
             /*--- END OF PLAYER LOGIC-----*/
             //------------------------------
-            //Portal Logic
+            //Seima: Portal Logic
             for(int i = 0; i < 5; i++)
             {
                 //Sets portal to right end of screen
@@ -436,9 +436,9 @@ void LevelFunction()
                 while(portalX > playerX)
                 {
                     portalX--;
-                    //Earase old portal
+                    //Erase old portal
                     LCD.SetFontColor(BLACK);
-                    LCD.FillRectangle(portalX, portalTopY, 10, 239);
+                    LCD.FillRectangle(portalX, portalTopY, 20, 239);
 
                     PortalA.Draw(portalX, portalTopY);
                     PortalB.Draw(portalX, portalBottomY);
