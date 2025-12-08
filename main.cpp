@@ -15,10 +15,10 @@ float playerY = 220;
 //Seima: Creates variables for the coordinates of the portals.
 float portalX = 300;
 
-float portalBottomX;
+float portalTopY;
 float portalBottomY;
 
-//Mateo: I've written a class to help keep all he menu logic organized
+//Mateo: I've written a class to help keep all the menu logic organized
 class menu {
     private:
         //Mateo: main doesn't need to know about these
@@ -317,10 +317,18 @@ void LevelFunction()
     FEHImage WaveStraight;
     FEHImage WaveUp;
 
+    //Seima: Declares Image of Portals
+    FEHImage PortalA;
+    FEHImage PortalB;
+
     //Open player image
     WaveDown.Open("WaveIconDown.png");
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
+
+    //Opens portal image
+    PortalA.Open("PortalA.png");
+    PortalB.Open("PortalB.png");
 
     while(true)
     {
