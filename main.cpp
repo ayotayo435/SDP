@@ -422,43 +422,40 @@ void LevelFunction()
             //------------------------------
             /*--- END OF PLAYER LOGIC-----*/
             //------------------------------
-            //Seima: Portal Logic
-            for(int i = 0; i < 5; i++)
-            {
-                //Sets portal to right end of screen
-                portalX = 300;
-
-                //(Re)draws portals
-                PortalA.Draw(portalX, portalTopY);
-                PortalB.Draw(portalX, portalBottomY);
-
-
-
-                //Portal moves left until it collides with the player
-                while(portalX > playerX)
-                {
-                     //Erase old portal
-                    LCD.SetFontColor(BLACK);
-                    LCD.FillRectangle(portalX, portalTopY, 60,319);
-                    
-                    portalX--;
-    
-                    PortalA.Draw(portalX, portalTopY);
-                    PortalB.Draw(portalX, portalBottomY);
-
-                    Sleep(5);
-                }
-                //Erase old portal
-                LCD.SetFontColor(BLACK);
-                LCD.FillRectangle(portalX, portalTopY, 60,319);
-                Sleep(15);
-
-            }
             
 
 
-
     }
+    //Seima: Portal Logic
+        for(int i = 0; i < 5; i++)
+        {
+        //Sets portal to right end of screen
+        portalX = 300;
+
+        //(Re)draws portals
+        PortalA.Draw(portalX, portalTopY);
+        PortalB.Draw(portalX, portalBottomY);
+
+        //Portal moves left until it collides with the player
+        while(portalX > playerX)
+        {
+        //Erase old portal
+        LCD.SetFontColor(BLACK);
+        LCD.FillRectangle(portalX, portalTopY, 60,319);
+
+        portalX--;
+
+        PortalA.Draw(portalX, portalTopY);
+        PortalB.Draw(portalX, portalBottomY);
+
+        Sleep(5);
+        }
+        //Erase old portal
+        LCD.SetFontColor(BLACK);
+        LCD.FillRectangle(portalX, portalTopY, 60,319);
+        Sleep(15);
+
+        }
 
 
     
