@@ -466,7 +466,10 @@ int main()
     int difficulty = myMenu.Run();
 
     //Start the game based on the result
-    LCD.Clear(BLACK);
+    //Andriy: Draws background
+    FEHImage Background;
+    Background.Open("background.png");
+    Background.Draw(0,0);
     LCD.WriteLine("Starting Game...");
     
     if (difficulty == 1)
@@ -474,8 +477,10 @@ int main()
         
         LCD.WriteLine("Mode: NORMAL");
         Sleep(3.0);
-        //clear the 'loding screen'
-        LCD.Clear(BLACK);
+        //Andriy: Draws background
+        FEHImage Background;
+        Background.Open("background.png");
+        Background.Draw(0,0);
         LevelFunction();
     } 
     else
