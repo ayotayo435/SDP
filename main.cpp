@@ -108,7 +108,10 @@ class menu {
 
         //Mateo: This will show the difficulty options after the users presses play
         int SelectDifficulty() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("SELECT DIFFICULTY");
 
             // Draw Normal Button
@@ -167,7 +170,10 @@ class menu {
 
             while (1)
             {
-                LCD.Clear(BLACK);
+                //Andriy: Draws background
+                FEHImage Background;
+                Background.Open("background.png");
+                Background.Draw(0,0);
                 LCD.SetFontColor(WHITE);
                 LCD.WriteLine("EDUCATIONAL DASH");
             
