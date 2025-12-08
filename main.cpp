@@ -341,6 +341,10 @@ void LevelFunction()
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
 
+    //Seima: Open Portal Images
+    PortalA.Open("PortalA.png");
+    PortalB.Open("PortalB.png");
+
     while(true)
     {
 
