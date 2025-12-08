@@ -397,7 +397,7 @@ void LevelFunction()
                 //change y position to go up
                 playerY = playerY - 3;
             }
-    
+            portalLogic();
 
             //draw player
             //LCD.SetFontColor(WHITE);
