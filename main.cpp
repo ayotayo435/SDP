@@ -437,15 +437,15 @@ void LevelFunction()
                 //Portal moves left until it collides with the player
                 while(portalX > playerX)
                 {
+                     //Erase old portal
+                    LCD.SetFontColor(BLACK);
+                    LCD.FillRectangle(portalX, portalTopY, 60,319);
+                    
                     portalX--;
     
                     PortalA.Draw(portalX, portalTopY);
                     PortalB.Draw(portalX, portalBottomY);
 
-                    //Erase old portal
-                    LCD.SetFontColor(BLACK);
-                    LCD.FillRectangle(portalX, portalTopY, 60,319);
-                    
                     Sleep(5);
                 }
                 //Erase old portal
