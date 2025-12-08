@@ -318,6 +318,10 @@ void LevelFunction()
     FEHImage WaveUp;
     FEHImage Obstacle;
     int ObsXY[40][40];
+    //Open player image
+    WaveDown.Open("WaveIconDown.png");
+    WaveStraight.Open("WaveIconStraight.png");
+    WaveUp.Open("WaveIconUp.png");
     Obstacle.Open("Saw1.png");
     //Andriy's goofy obstacle generation
     for (int i = 0; i < 39; i++){
@@ -326,13 +330,7 @@ void LevelFunction()
         ObsXY[i][0] = randx;
         ObsXY[i][1] = randy;
     }
-
-    //Open player image
-    WaveDown.Open("WaveIconDown.png");
-    WaveStraight.Open("WaveIconStraight.png");
-    WaveUp.Open("WaveIconUp.png");
-    Obstacle.Open("Saw1.png");
-
+    
     while(true)
     {
         //checks if saws can appear on screen and if they can draws them
@@ -435,12 +433,12 @@ void LevelFunction()
         
         */
 
-     //The protals will come towards the player, with the top portal
-    //taking the top of half of the screen and the other portal taking the 
-    //bottom half
+        //The protals will come towards the player, with the top portal
+        //taking the top of half of the screen and the other portal taking the 
+        //bottom half
 
-    //the protals will come towards the player and when the correct portal collids
-    //with the player the screen flashes green, and red for vice versa
+        //the protals will come towards the player and when the correct portal collids
+        //with the player the screen flashes green, and red for vice versa
 
 }
 
