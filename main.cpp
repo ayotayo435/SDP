@@ -438,13 +438,13 @@ void LevelFunction()
                 while(portalX > playerX)
                 {
                     portalX--;
-                    //Erase old portal
-                    LCD.SetFontColor(BLACK);
-                    LCD.FillRectangle(portalX, portalTopY, 10,319);
-
-
+    
                     PortalA.Draw(portalX, portalTopY);
                     PortalB.Draw(portalX, portalBottomY);
+
+                    //Erase old portal
+                    LCD.SetFontColor(BLACK);
+                    LCD.FillRectangle(portalX, portalTopY, 50,319);
                     
                     Sleep(5);
                 }
