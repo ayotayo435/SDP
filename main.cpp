@@ -310,10 +310,7 @@ int getQuestions()
 //Seima: Added portals and their functionality after the y pressed is checked
 void LevelFunction()
 {
-    //---------------------------------
-    /* Mateo: THIS IS THE PLAYER LOGIC*/
-    /*----------DONT FORGET----------*/
-    //---------------------------------
+    
 
     //declares image of our player
     FEHImage WaveDown;
@@ -343,7 +340,11 @@ void LevelFunction()
             }
         }
 
-        
+        //---------------------------------
+        /* Mateo: THIS IS THE PLAYER LOGIC*/
+        /*----------DONT FORGET----------*/
+        //---------------------------------
+
         while (playerY == 222)
         {
             //don't change position
@@ -409,11 +410,11 @@ void LevelFunction()
             //LCD.FillRectangle(playerX, playerY, 12, 12);
             WaveDown.Draw(playerX, playerY);
             Sleep(5);
-    }
 
-    //------------------------------
-    /*--- END OF PLAYER LOGIC-----*/
-    //------------------------------
+                //------------------------------
+                /*--- END OF PLAYER LOGIC-----*/
+                //------------------------------
+    }
 
 
     /*
