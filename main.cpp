@@ -362,7 +362,7 @@ void LevelFunction()
             //change y position to go up AND STOP AT ROOF
             if (playerY != 10)
             {
-            playerY = playerY - 1;
+            playerY = playerY - 3;
             WaveUp.Draw(playerX, playerY);
             }
             else
@@ -385,7 +385,7 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 20, 20);
 
             //change y position to go down
-            playerY = playerY + 1;
+            playerY = playerY + 3;
 
             //draw player
             //LCD.SetFontColor(WHITE);
