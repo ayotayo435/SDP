@@ -416,6 +416,12 @@ void LevelFunction()
         
         */
 
+        //The protals will come towards the player, with the top portal
+        //taking the top of half of the screen and the other portal taking the 
+        //bottom half
+
+        //the protals will come towards the player and when the correct portal collids
+        //with the player the screen flashes green, and red for vice versa
 
 }
 
