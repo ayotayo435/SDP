@@ -10,7 +10,7 @@
 
 //global variables
 float playerX = 110;
-float playerY = 220;
+float playerY = 219;
 
 //Seima: Creates variables for the coordinates of the portals.
 float portalX = 300;
@@ -25,10 +25,13 @@ class menu {
         
         //Mateo: This function will print the credits to the screen
         void ViewCredits() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("CREDITS:");
             //Mateo: I forgor your guy's last names
-            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Auedriy");
+            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Andriy Misyura");
 
             // Mateo: drawing the back button
             LCD.DrawRectangle(10, 200, 100, 30);
@@ -50,7 +53,10 @@ class menu {
 
         // Mateo: this function will print the instructions to the screen
         void ViewInstructions() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("INSTRUCTIONS:");
             LCD.WriteLine("Tap screen to jump.");
             LCD.WriteLine("Avoid the obstacles.");
@@ -75,7 +81,10 @@ class menu {
 
         //Mateo: This function will show the stats
         void ViewStats() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("STATISTICS:");
             LCD.WriteLine("High Score: 999");
         
@@ -99,7 +108,10 @@ class menu {
 
         //Mateo: This will show the difficulty options after the users presses play
         int SelectDifficulty() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("SELECT DIFFICULTY");
 
             // Draw Normal Button
@@ -158,7 +170,10 @@ class menu {
 
             while (1)
             {
-                LCD.Clear(BLACK);
+                //Andriy: Draws background
+                FEHImage Background;
+                Background.Open("background.png");
+                Background.Draw(0,0);
                 LCD.SetFontColor(WHITE);
                 LCD.WriteLine("EDUCATIONAL DASH");
             
@@ -326,25 +341,15 @@ void LevelFunction()
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
 
-    //Opens portal image
-    PortalA.Open("PortalA.png");
-    PortalB.Open("PortalB.png");
-
     while(true)
     {
-        //checks if saws can appear on screen and if they can draws them
-        for (int i = 0; i < 39; i++){  
-            if (ObsXY[i][1] < 300){
-                Obstacle.Draw(ObsXY[i][1],ObsXY[i][2]);
-            }
-        }
 
         //---------------------------------
         /* Mateo: THIS IS THE PLAYER LOGIC*/
         /*----------DONT FORGET----------*/
         //---------------------------------
 
-        while (playerY == 222)
+        while (playerY == 219)
         {
             //don't change position
 
@@ -410,9 +415,9 @@ void LevelFunction()
             WaveDown.Draw(playerX, playerY);
             Sleep(5);
 
-                //------------------------------
-                /*--- END OF PLAYER LOGIC-----*/
-                //------------------------------
+            //------------------------------
+            /*--- END OF PLAYER LOGIC-----*/
+            //------------------------------
     }
 
 
@@ -432,7 +437,12 @@ void LevelFunction()
         
         */
 
-     
+        //The protals will come towards the player, with the top portal
+        //taking the top of half of the screen and the other portal taking the 
+        //bottom half
+
+        //the protals will come towards the player and when the correct portal collids
+        //with the player the screen flashes green, and red for vice versa
 
 }
 
@@ -445,7 +455,10 @@ int main()
     int difficulty = myMenu.Run();
 
     //Start the game based on the result
-    LCD.Clear(BLACK);
+    //Andriy: Draws background
+    FEHImage Background;
+    Background.Open("background.png");
+    Background.Draw(0,0);
     LCD.WriteLine("Starting Game...");
     
     if (difficulty == 1)
@@ -453,8 +466,10 @@ int main()
         
         LCD.WriteLine("Mode: NORMAL");
         Sleep(3.0);
-        //clear the 'loding screen'
-        LCD.Clear(BLACK);
+        //Andriy: Draws background
+        FEHImage Background;
+        Background.Open("background.png");
+        Background.Draw(0,0);
         LevelFunction();
     } 
     else
