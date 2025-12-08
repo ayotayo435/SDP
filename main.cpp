@@ -339,7 +339,7 @@ void LevelFunction()
         //checks if saws can appear on screen and if they can draws them
         for (int i = 0; i < 39; i++){  
             if (ObsXY[i][1] < 300){
-                Obstacle.draw(ObsXY[i][1],ObsXY[i][2]);
+                Obstacle.Draw(ObsXY[i][1],ObsXY[i][2]);
             }
         }
 
