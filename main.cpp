@@ -50,6 +50,10 @@ class menu {
 
         // Mateo: this function will print the instructions to the screen
         void ViewInstructions() {
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.Clear(BLACK);
             LCD.WriteLine("INSTRUCTIONS:");
             LCD.WriteLine("Tap screen to jump.");
