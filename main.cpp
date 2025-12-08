@@ -440,6 +440,7 @@ void LevelFunction()
                     PortalB.Draw(portalX, portalBottomY);
                     Sleep(5);
                 }
+                Sleep(15);
 
             }
             
