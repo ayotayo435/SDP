@@ -444,13 +444,13 @@ void LevelFunction()
 
                     //Erase old portal
                     LCD.SetFontColor(BLACK);
-                    LCD.FillRectangle(portalX, portalTopY, 50,319);
+                    LCD.FillRectangle(portalX, portalTopY, 60,319);
                     
                     Sleep(5);
                 }
                 //Erase old portal
                 LCD.SetFontColor(BLACK);
-                LCD.FillRectangle(portalX, portalTopY, 50,319);
+                LCD.FillRectangle(portalX, portalTopY, 60,319);
                 Sleep(15);
 
             }
