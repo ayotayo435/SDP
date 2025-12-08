@@ -9,7 +9,7 @@
 #define SCREENX 319
 
 //global variables
-float playerX = 10;
+float playerX = 110;
 float playerY = 220;
 
 //Seima: Creates variables for the coordinates of the portals.
@@ -362,7 +362,7 @@ void LevelFunction()
             //change y position to go up AND STOP AT ROOF
             if (playerY != 10)
             {
-            playerY = playerY - 5;
+            playerY = playerY - 1;
             WaveUp.Draw(playerX, playerY);
             }
             else
@@ -385,7 +385,7 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 20, 20);
 
             //change y position to go down
-            playerY = playerY + 5;
+            playerY = playerY + 1;
 
             //draw player
             //LCD.SetFontColor(WHITE);
