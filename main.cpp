@@ -438,6 +438,7 @@ void LevelFunction()
                     portalX--;
                     PortalA.Draw(portalX, portalTopY);
                     PortalB.Draw(portalX, portalBottomY);
+                    Sleep(5);
                 }
 
             }
