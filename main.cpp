@@ -25,10 +25,13 @@ class menu {
         
         //Mateo: This function will print the credits to the screen
         void ViewCredits() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("CREDITS:");
             //Mateo: I forgor your guy's last names
-            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Auedriy");
+            LCD.WriteLine("Developers: Mateo Polt, Seima Taniguchi, Andriy Misyura");
 
             // Mateo: drawing the back button
             LCD.DrawRectangle(10, 200, 100, 30);
@@ -78,7 +81,10 @@ class menu {
 
         //Mateo: This function will show the stats
         void ViewStats() {
-            LCD.Clear(BLACK);
+            //Andriy: Draws background
+            FEHImage Background;
+            Background.Open("background.png");
+            Background.Draw(0,0);
             LCD.WriteLine("STATISTICS:");
             LCD.WriteLine("High Score: 999");
         
