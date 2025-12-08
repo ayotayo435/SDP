@@ -423,7 +423,7 @@ void LevelFunction()
             /*--- END OF PLAYER LOGIC-----*/
             //------------------------------
             //Portal Logic
-            while (true)
+            for(int i = 0; i < 5; i++)
             {
                 //Sets portal to right end of screen
                 portalX = 300;
