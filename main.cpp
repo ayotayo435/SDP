@@ -338,7 +338,7 @@ void portalLogic()
             {
                 //Erase old portal
                 LCD.SetFontColor(BLACK);
-                LCD.FillRectangle(portalX, portalTopY, 60,319);
+                LCD.FillRectangle(portalX, portalTopY, 70,SCREENY);
                 //Updates x-coordinate of portals
                 portalX--;
                 //Redraws portals
@@ -349,7 +349,7 @@ void portalLogic()
             }
             //Erase old portal
             LCD.SetFontColor(BLACK);
-            LCD.FillRectangle(portalX, portalTopY, 60,319);
+            LCD.FillRectangle(portalX, portalTopY, 70,319);
             Sleep(30);
 
         }
@@ -432,7 +432,6 @@ void LevelFunction()
             //REPLACE THIS WITH THE CHARACTER ART
             //LCD.FillRectangle(playerX, playerY, 12, 12);
             //WaveUp.Draw(playerX, playerY);
-            portalLogic();
             Sleep(5);
         }
   
@@ -449,7 +448,6 @@ void LevelFunction()
             //REPLACE THIS WITH THE CHARACTER ART
             //LCD.FillRectangle(playerX, playerY, 12, 12);
             WaveDown.Draw(playerX, playerY);
-            portalLogic();
             Sleep(5);
 
             //------------------------------
