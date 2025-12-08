@@ -438,6 +438,10 @@ void LevelFunction()
                     portalX--;
                     PortalA.Draw(portalX, portalTopY);
                     PortalB.Draw(portalX, portalBottomY);
+                    //Earase old portal
+                    LCD.SetFontColor(BLACK);
+                    LCD.FillRectangle(portalX, portalTopY, 10,319);
+
                     Sleep(5);
                 }
                 Sleep(15);
