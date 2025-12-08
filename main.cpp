@@ -363,6 +363,10 @@ void portalLogic()
 void LevelFunction()
 {
     
+    //declares image of our player
+    FEHImage WaveDown;
+    FEHImage WaveStraight;
+    FEHImage WaveUp;
 
 
 
@@ -428,6 +432,7 @@ void LevelFunction()
             //REPLACE THIS WITH THE CHARACTER ART
             //LCD.FillRectangle(playerX, playerY, 12, 12);
             //WaveUp.Draw(playerX, playerY);
+            portalLogic();
             Sleep(5);
         }
   
@@ -444,6 +449,7 @@ void LevelFunction()
             //REPLACE THIS WITH THE CHARACTER ART
             //LCD.FillRectangle(playerX, playerY, 12, 12);
             WaveDown.Draw(playerX, playerY);
+            portalLogic();
             Sleep(5);
 
             //------------------------------
