@@ -9,7 +9,7 @@
 #define SCREENX 319
 
 //global variables
-float playerX = 10;
+float playerX = 110;
 float playerY = 220;
 
 //Seima: Creates variables for the coordinates of the portals.
@@ -320,23 +320,22 @@ void LevelFunction()
     FEHImage WaveStraight;
     FEHImage WaveUp;
 
-    //Seima: Declares images of portals
-    FEHImage PortalA;
-    FEHImage PortalB;
-
     //Open player image
     WaveDown.Open("WaveIconDown.png");
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
 
-    //Opens Portal Images
-    PortalA.Open("PortalA.png");
-    PortalB.Open("PortalB.png");
-
     while(true)
-    {  
+    {
+        //checks if saws can appear on screen and if they can draws them
+        for (int i = 0; i < 39; i++){  
+            if (ObsXY[i][1] < 300){
+                Obstacle.Draw(ObsXY[i][1],ObsXY[i][2]);
+            }
+        }
+
         
-        while (playerY == 220)
+        while (playerY == 222)
         {
             //don't change position
 
@@ -347,7 +346,7 @@ void LevelFunction()
             if (Keyboard.isPressed(KEY_W))
             {
                 //change y position to go up
-                playerY = playerY - 5;
+                playerY = playerY - 3;
             }
     
 
@@ -368,9 +367,9 @@ void LevelFunction()
             
 
             //change y position to go up AND STOP AT ROOF
-            if (playerY != 10)
+            if (playerY != 9)
             {
-            playerY = playerY - 5;
+            playerY = playerY - 3;
             WaveUp.Draw(playerX, playerY);
             }
             else
@@ -393,7 +392,7 @@ void LevelFunction()
             LCD.FillRectangle(playerX, playerY, 20, 20);
 
             //change y position to go down
-            playerY = playerY + 5;
+            playerY = playerY + 3;
 
             //draw player
             //LCD.SetFontColor(WHITE);
