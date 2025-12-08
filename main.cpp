@@ -450,7 +450,7 @@ void LevelFunction()
                 }
                 //Erase old portal
                 LCD.SetFontColor(BLACK);
-                LCD.FillRectangle(portalX, portalTopY, 10,319);
+                LCD.FillRectangle(portalX, portalTopY, 50,319);
                 Sleep(15);
 
             }
