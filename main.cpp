@@ -314,9 +314,46 @@ int getQuestions()
 
 }
 */
+//Seima: Portal Logic
+void portalLogic() 
+{
+    //Declares Image of Portals
+    FEHImage PortalA;
+    FEHImage PortalB;
 
+    //Open Portal Images
+    PortalA.Open("PortalA.png");
+    PortalB.Open("PortalB.png");
+    for(int i = 0; i < 5; i++)
+        {
+            //Sets portal to right end of screen
+            portalX = 300;
 
+            //(Re)draws portals
+            PortalA.Draw(portalX, portalTopY);
+            PortalB.Draw(portalX, portalBottomY);
 
+            //Portal moves left until it collides with the player
+            while(portalX > playerX)
+            {
+                //Erase old portal
+                LCD.SetFontColor(BLACK);
+                LCD.FillRectangle(portalX, portalTopY, 60,319);
+                //Updates x-coordinate of portals
+                portalX--;
+                //Redraws portals
+                PortalA.Draw(portalX, portalTopY);
+                PortalB.Draw(portalX, portalBottomY);
+
+                Sleep(5);
+            }
+            //Erase old portal
+            LCD.SetFontColor(BLACK);
+            LCD.FillRectangle(portalX, portalTopY, 60,319);
+            Sleep(30);
+
+        }
+}
 
 // Mateo: This is the LevelFunction which will load
 //after the user selects a difficulty
@@ -327,23 +364,13 @@ void LevelFunction()
 {
     
 
-    //declares image of our player
-    FEHImage WaveDown;
-    FEHImage WaveStraight;
-    FEHImage WaveUp;
 
-    //Seima: Declares Image of Portals
-    FEHImage PortalA;
-    FEHImage PortalB;
 
     //Open player image
     WaveDown.Open("WaveIconDown.png");
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
 
-    //Seima: Open Portal Images
-    PortalA.Open("PortalA.png");
-    PortalB.Open("PortalB.png");
 
     while(true)
     {
@@ -426,39 +453,10 @@ void LevelFunction()
 
 
     }
-    //Seima: Portal Logic
-        for(int i = 0; i < 5; i++)
-        {
-            //Sets portal to right end of screen
-            portalX = 300;
-
-            //(Re)draws portals
-            PortalA.Draw(portalX, portalTopY);
-            PortalB.Draw(portalX, portalBottomY);
-
-            //Portal moves left until it collides with the player
-            while(portalX > playerX)
-            {
-                //Erase old portal
-                LCD.SetFontColor(BLACK);
-                LCD.FillRectangle(portalX, portalTopY, 60,319);
-                //Updates x-coordinate of portals
-                portalX--;
-                //Redraws portals
-                PortalA.Draw(portalX, portalTopY);
-                PortalB.Draw(portalX, portalBottomY);
-
-                Sleep(5);
-            }
-            //Erase old portal
-            LCD.SetFontColor(BLACK);
-            LCD.FillRectangle(portalX, portalTopY, 60,319);
-            Sleep(30);
-
-        }
     
-
+        
 }
+
 
 int main()
 {
