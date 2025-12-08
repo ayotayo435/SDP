@@ -467,13 +467,9 @@ int main()
     
     if (difficulty == 1)
     {
-        
+        LCD.Clear(BLACK);
         LCD.WriteLine("Mode: NORMAL");
         Sleep(3.0);
-        //Andriy: Draws background
-        FEHImage Background;
-        Background.Open("background.png");
-        Background.Draw(0,0);
         LevelFunction();
     } 
     else
