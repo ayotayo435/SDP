@@ -15,8 +15,8 @@ float playerY = 219;
 //Seima: Creates variables for the coordinates of the portals.
 float portalX = 300;
 
-float portalTopY;
-float portalBottomY;
+float portalTopY = 0;
+float portalBottomY = SCREENY / 2.0;
 
 //Mateo: I've written a class to help keep all the menu logic organized
 class menu {
