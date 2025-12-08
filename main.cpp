@@ -54,7 +54,6 @@ class menu {
             FEHImage Background;
             Background.Open("background.png");
             Background.Draw(0,0);
-            LCD.Clear(BLACK);
             LCD.WriteLine("INSTRUCTIONS:");
             LCD.WriteLine("Tap screen to jump.");
             LCD.WriteLine("Avoid the obstacles.");
