@@ -331,29 +331,12 @@ void LevelFunction()
     FEHImage WaveDown;
     FEHImage WaveStraight;
     FEHImage WaveUp;
-    FEHImage Obstacle;
-    int ObsXY[40][40];
-    //Open player image
     WaveDown.Open("WaveIconDown.png");
     WaveStraight.Open("WaveIconStraight.png");
     WaveUp.Open("WaveIconUp.png");
-    Obstacle.Open("Saw1.png");
-    //Andriy's goofy obstacle generation
-    for (int i = 0; i < 39; i++){
-        int randx = Random.RandInt()/25;
-        int randy = Random.RandInt()/138;
-        ObsXY[i][0] = randx;
-        ObsXY[i][1] = randy;
-    }
     
     while(true)
     {
-        //checks if saws can appear on screen and if they can draws them
-        for (int i = 0; i < 39; i++){  
-            if (ObsXY[i][1] < 300){
-                Obstacle.Draw(ObsXY[i][1],ObsXY[i][2]);
-            }
-        }
 
         //---------------------------------
         /* Mateo: THIS IS THE PLAYER LOGIC*/
