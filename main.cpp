@@ -10,7 +10,7 @@
 
 //global variables
 float playerX = 110;
-float playerY = 220;
+float playerY = 219;
 
 //Seima: Creates variables for the coordinates of the portals.
 float portalX;
@@ -345,7 +345,7 @@ void LevelFunction()
         /*----------DONT FORGET----------*/
         //---------------------------------
 
-        while (playerY == 222)
+        while (playerY == 219)
         {
             //don't change position
 
